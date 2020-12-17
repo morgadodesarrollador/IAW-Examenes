@@ -14,7 +14,7 @@ class CreateJrcusersTable extends Migration
     public function up()
     {
         Schema::create('jrcusers', function (Blueprint $table) {
-            $table->integer('id',11);
+            $table->smallInteger('id',11)->unsigned();
 		    $table->string('role',20)->nullable()->default('NULL');
 		    $table->string('name')->nullable()->default('NULL');
 		    $table->string('surname')->nullable()->default('NULL');

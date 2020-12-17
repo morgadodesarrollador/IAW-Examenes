@@ -11,5 +11,5 @@ class jrcGamasProducto extends Model
     protected $table = 'gamasproductos';
     protected $primarykey = 'Gama';
     protected $fillable = ['Gama','Descripcion','Imagen','created_at','updated_at'];
-    public $timestamps = true;
+    public $timestamps = false;
 }

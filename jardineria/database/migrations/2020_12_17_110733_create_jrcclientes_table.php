@@ -14,7 +14,7 @@ class CreateJrcclientesTable extends Migration
     public function up()
     {
         Schema::create('jrcclientes', function (Blueprint $table) {
-            $table->smallInteger('Codigo');
+            $table->smallInteger('Codigo')->unsigned();
 		    $table->string('Nombre',50);
 		    $table->string('Telefono',15);
 		    $table->string('Direccion',50);
@@ -22,7 +22,7 @@ class CreateJrcclientesTable extends Migration
 		    $table->string('Pais',50)->nullable()->default('NULL');
 		    $table->string('CodigoPostal',10)->nullable()->default('NULL');
 		    $table->decimal('LimiteCredito',15,2)->nullable();
-		    $table->integer('userid',11)->nullable();
+		    $table->smallInteger('userid',11)->nullable();
         });
     }
 

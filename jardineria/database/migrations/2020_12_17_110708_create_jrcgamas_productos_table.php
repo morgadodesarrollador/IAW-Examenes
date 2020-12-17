@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJrcgamasproductosTable extends Migration
+class CreateJrcgamasProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateJrcgamasproductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('jrcgamasproductos', function (Blueprint $table) {
+        Schema::create('jrcgamas_productos', function (Blueprint $table) {
             $table->string('Gama');
-		    $table->longText('Descripcion');
-		    $table->text('Imagen');
-          
+            $table->longText('Descripcion');
+            $table->longText('Imagen'); 
         });
     }
 
@@ -28,6 +27,6 @@ class CreateJrcgamasproductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jrcgamasproductos');
+        Schema::dropIfExists('jrcgamas_productos');
     }
 }

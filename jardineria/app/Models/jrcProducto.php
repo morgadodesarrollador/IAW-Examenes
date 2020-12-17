@@ -11,5 +11,5 @@ class jrcProducto extends Model
     protected $table = 'productos';
     protected $primarykey = 'Codigoproducto';
     protected $fillable = ['Codigoproducto','Nombre','Gama','Proveedor','Descripcion','Cantidadenstock','Precioventa','Precioproveedor','imagen','create_at','update_at'];
-    public $timestamps = true;
+    public $timestamps = false;
 }

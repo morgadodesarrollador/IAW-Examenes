@@ -13,10 +13,9 @@ class AddFkJrcclientesToJrcusers extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::table('jrcusers', function (Blueprint $table) {
-            $table->foreign('id')->references('userid')->on('jrcclientes')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreign('id')->references('userid')->on('jrcclientes');
         });
     }
 
@@ -28,7 +27,7 @@ class AddFkJrcclientesToJrcusers extends Migration
     public function down()
     {
         Schema::table('jrcusers', function (Blueprint $table) {
-            $table->dropForeign('jrcsusers_id_foreign');
+            $table->dropForeign('jrcusers_id_foreign');
         });
     }
 }

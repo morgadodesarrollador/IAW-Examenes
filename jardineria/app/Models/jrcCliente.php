@@ -11,5 +11,5 @@ class jrcCliente extends Model
     protected $table = 'clientes';
     protected $primarykey = 'Codigo';
     protected $fillable = ['Codigo','Nombre','Telefono','Direccion','Ciudad','Pais','CodigoPostal','LimiteCredito','userid','create_at','update_at'];
-    public $timestamps = true;
+    public $timestamps = false;
 }

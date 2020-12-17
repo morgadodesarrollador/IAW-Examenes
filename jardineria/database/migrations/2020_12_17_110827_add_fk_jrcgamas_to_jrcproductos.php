@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFkJrcclientesToJrcusers extends Migration
+class AddFkJrcgamasToJrcproductos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddFkJrcclientesToJrcusers extends Migration
      */
     public function up()
     {
-        Schema::table('jrcusers', function (Blueprint $table) {
-            $table->foreign('id')->references('userid')->on('jrcclientes')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+        Schema::enableForeignKeyConstraints();
+        Schema::table('jrcproductos', function (Blueprint $table) {
+            $table->foreign('Gama')->references('Gama')->on('jrcgama_productos');
         });
     }
 
@@ -27,8 +26,8 @@ class AddFkJrcclientesToJrcusers extends Migration
      */
     public function down()
     {
-        Schema::table('jrcclientes', function (Blueprint $table) {
-            //
+        Schema::table('jrcproductos', function (Blueprint $table) {
+            $table->dropForeign('jrcproductos_Gama_foreign');
         });
     }
 }
