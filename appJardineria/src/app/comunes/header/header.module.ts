@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { HeaderRoutingModule } from './header-routing.module';
 
-import { HeaderPageRoutingModule } from './header-routing.module';
-
-import { HeaderPage } from './header.page';
 
 @NgModule({
+  declarations: [],
   imports: [
     CommonModule,
-    FormsModule,
-    IonicModule,
-    HeaderPageRoutingModule
-  ],
-  declarations: [HeaderPage]
+    HeaderRoutingModule
+  ]
 })
-export class HeaderPageModule {}
+export class HeaderModule { }

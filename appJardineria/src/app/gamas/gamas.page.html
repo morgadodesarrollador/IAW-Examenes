@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
-            Tab 1
+            Gamas
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -12,11 +12,11 @@
             <ion-title size="large">Tab 1</ion-title>
         </ion-toolbar>
     </ion-header>
-    <h2>Listado de Gamas</h2>
     <ion-list *ngFor="let gama of gamas">
         <ion-item>
             <ion-label>
                 {{ gama.Gama }}
+                <p>{{gama.Descripcion}}</p>
             </ion-label>
         </ion-item>
     </ion-list>
