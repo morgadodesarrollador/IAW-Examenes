@@ -1,0 +1,28 @@
+<ion-app>
+    <ion-split-pane contentId="main-content">
+      <ion-menu contentId="main-content" menuId="first" type="overlay">
+        <ion-header *ngIf="usuarios" >
+          <div class="foto">
+            <img src="http://jardineria.test/img/usuarios/{{ usuarios[0].image}}" alt="">
+          </div>
+          <div class="info">
+            <h6>DGPRODUCTIONS GARDEN <br> San Francisco (USA)</h6>
+            <div class="info-usuario">
+              <div>{{ usuarios[0].name }}, {{ usuarios[0].surname }}</div>
+              <div>{{ usuarios[0].email }}</div>
+              <div>{{ usuarios[0].role }}</div>
+            </div>
+          </div>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item *ngFor="let gama of gamasproductos">
+              <img src="http://jardineria.test/img/gamas/{{ gama.Imagen }}" alt="">
+              <ion-label>{{ gama.Gama }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+  </ion-app>
